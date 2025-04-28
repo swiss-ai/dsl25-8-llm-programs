@@ -115,7 +115,7 @@ class DocTransform():
         self.dest_path = Path(dest_path)
 
     def __repr__(self):
-        return f"DocTransform({self.src.name}, {self.dest_path.name})"
+        return f"DocTransform({self.src.path.name}, {self.dest_path.name})"
 
     def apply(self, func, debug=False):
         """
