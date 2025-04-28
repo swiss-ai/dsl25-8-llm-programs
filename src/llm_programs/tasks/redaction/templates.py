@@ -41,7 +41,7 @@ The sensitive information is:
 ```
 """
 
-TEMPLATE_FILTER_INSTITUTIONS = """From the provided document identify all the full names of the participarting institutions, and their abbreviations. Output each institution full name or abbreviation on a new line. If none are found, output `None`. Please do not output additional text.
+TEMPLATE_FILTER_INSTITUTIONS = """From the provided document identify all the full names of the participating institutions, and their abbreviations. Output each institution full name or abbreviation on a new line. If none are found, output `None`. Please do not output additional text.
 
 For example:
 ```

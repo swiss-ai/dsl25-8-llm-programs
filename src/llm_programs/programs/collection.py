@@ -55,7 +55,7 @@ class MapReduce():
         if len(args) == 1:
             return args[0]
         else:
-            self.reduce_fn(args=args)
+            return self.reduce_fn(args=args)
 
 
         # NOTE: maybe not mem-efficient
