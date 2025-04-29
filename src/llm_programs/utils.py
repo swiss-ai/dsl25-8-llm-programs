@@ -153,11 +153,14 @@ def write(file, content):
     with open(file, 'w') as f:
         f.write(content)
 
+
 def printw(text):
     print(wrap(text))
 
+
 def wrap(text):
     return textwrap.fill(text, width=120, drop_whitespace=False, replace_whitespace=False)
+
 
 def debug_wrap(engine):
     '''TODO fix'''
