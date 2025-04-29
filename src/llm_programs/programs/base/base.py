@@ -1,19 +1,19 @@
-from .locallm import LocalLM
+from .engines.locallm import LocalLM
 
 
 class FormatMap():
-    def __call__(self, *args, **kwargs):
-        # print(f"args: {args}")
-        # print(f"kwargs: {kwargs}")
+    def __call__(self, *args, **ctx):
+        # if args: print(f"args: {args}")
+        # if ctx: print(f"ctx: {ctx}")
         template = None
         if args:
             template = args[0]
         else:
-            template = kwargs.get("template", None)
+            template = ctx.get("template", None)
         if template is None:
-            return ' '.join(list(kwargs.values()))
-        elif kwargs:
-            return template.format_map(kwargs)
+            return ' '.join(list(ctx.values()))
+        elif ctx:
+            return template.format_map(ctx)
         else:
             return template
 
