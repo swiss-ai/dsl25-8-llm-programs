@@ -8,6 +8,8 @@ import textwrap
 
 PAGE_DELIMETER = re.compile(r'\n*\{\d+\}-{48}\n*')
 
+IDENTITY = lambda x: x
+
 
 class DocDir():
     """

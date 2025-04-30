@@ -1,6 +1,5 @@
 from types import NoneType
-from llm_programs.programs.base import LMFunction, LMProgram
-
+from llm_programs.programs.base import LMFunction, LMProgram, IDENTITY
 
 from functools import reduce
 from collections.abc import Iterable
@@ -8,6 +7,7 @@ from collections.abc import Iterable
 from typing import Callable, TypeVar
 
 import concurrent.futures
+
 
 InputType = TypeVar('InputType')
 StateType = TypeVar('StateType')
@@ -110,14 +110,32 @@ class LeftReduce(LMProgram):
         return reduce(self.f, inputs)
 
 
-def mk_unary(fn):
-    """Make an (LM) function expecting one kw argument `input` positional"""
-    return lambda input: fn(input=input)
+class ExtractionProgram(LMProgram):
+    """
+    Generalized information extraction program.
+    """
+    def __init__(self,
+                 extract_fn: Callable[[str], T],
+                 verify_fn: Callable[[T], bool] = IDENTITY,
+                 max_workers: int | NoneType = None):
+        self.extract_fn = extract_fn
+        self.verify_fn = verify_fn
+        self.mapper = get_mapper(max_workers)
+
+    def __call__(self, inputs: Iterable[str]) -> T:
+        results = self.mapper(self.extract_fn, inputs)
+        verified = [result for result in results if self.verify_fn(result)]
+        return verified
+
+    # TODO add keys/indices to input/output to locate extracted information
+    # TODO add a way to extract multiple things from the same input
 
 
-def mk_binary(fn):
-    """Make an (LM) function expecting two kw arguments `inputa` and `inputb` positional"""
-    return lambda inputa, inputb: fn(inputa=inputa, inputb=inputb)
+def get_mapper(max_workers: int | NoneType = None):
+    if max_workers == 1:
+        return simple_mapper
+    else:
+        return parallel_mapper
 
 
 def simple_mapper(fn, inputs):

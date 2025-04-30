@@ -1,12 +1,11 @@
 from llm_programs.programs.types import Prompter, Engine, Parser
+from llm_programs.utils import IDENTITY
 
 from .prompters.prompters import KeywordPrompter
 from .engines import LocalLM
 
 from typing import Any, TypeVar, Callable, Iterable, List, Optional
 
-
-IDENTITY = lambda x: x
 
 LMProgram = Callable[..., Any]
 
