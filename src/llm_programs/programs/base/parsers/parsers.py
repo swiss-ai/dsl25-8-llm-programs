@@ -1,7 +1,9 @@
+from typing import Callable
 from llm_programs.utils import IDENTITY
 
 import re
 
+PredicateParser = Callable[[str], bool]
 
 def split_parser(response, separator):
     """
@@ -17,7 +19,7 @@ def lines_parser(response):
     return split_parser(response, "\n")
 
 
-class YesNoPredicateParser:
+class YesNoPredicateParser(PredicateParser):
     """
     Parses a string response to determine if it indicates a positive ('Yes')
     or negative ('No') affirmation near the beginning, ignoring common leading

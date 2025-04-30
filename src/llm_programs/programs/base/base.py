@@ -4,7 +4,7 @@ from llm_programs.utils import IDENTITY
 from .prompters.prompters import KeywordPrompter
 from .engines import LocalLM
 
-from typing import Any, TypeVar, Callable, Iterable, List, Optional
+from typing import Any, Callable
 
 
 LMProgram = Callable[..., Any]
