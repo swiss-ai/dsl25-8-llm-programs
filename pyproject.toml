@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "llm_programs"
 version = "0.1"
-description = "LLM Programs Blueprints"
+description = "LLM Program Blueprints"
 readme = "README.md"
 requires-python = ">=3.12"
 license = {text = "MIT"}
@@ -15,6 +15,11 @@ authors = [
 dependencies = [
     # "numpy>=1.20.0",
     # "pandas>=1.3.0",
+    "google-generativeai"
+    "bitsandbytes",
+    "accelerate",
+    "v-agents",
+    "transformers",
 ]
 
 [project.optional-dependencies]
