@@ -10,7 +10,7 @@ from typing import Any, Callable
 LMProgram = Callable[..., Any]
 
 
-class LMFunction:
+class LMFunction(LMProgram):
     def __init__(
             self,
             prompter: Prompter = KeywordPrompter(),
