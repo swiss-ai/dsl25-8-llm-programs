@@ -3,7 +3,7 @@
 
 ## LM Functions
 
-In our realisation, LM Function is a function composed of three parts: a prompter, an LM engine, and a parser:
+In our implementation, an LM Function is a function composed of three parts: a prompter, an LM engine, and a parser:
 - The prompter takes in arguments and formats them into a prompt.
 - The engine calls an LM (local or otherwise) with the prompt, and returns the response.
 - The parser (optionally) transforms the response.
