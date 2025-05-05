@@ -4,7 +4,10 @@ from pathlib import Path
 import re
 import random
 import textwrap
+import pickle
+
 from typing import Dict, Iterable, Callable, NamedTuple
+from functools import reduce, wraps
 
 import logging
 logger = logging.getLogger(__name__)
@@ -92,6 +95,7 @@ class Document():
         self.subdir = subdir
         assert subdir.is_dir(), f"Expected a directory, got {subdir}"
         name = subdir.name
+        self.name = name
         self.md_file = subdir / f"{name}.md"
         assert self.md_file.exists(), f"Document {self.md_file} does not exist"
 
@@ -100,6 +104,9 @@ class Document():
 
     def read(self):
         return self.md_file.read_text()
+
+    def read_aux(self, aux_name):
+        return (self.subdir / f"{self.name}.{aux_name}.md").read_text()
 
     def pages(self, enum=False, min_n_chars=10):
         content = self.read()
@@ -188,4 +195,38 @@ def debug_wrap(engine):
         print(response)
         print(f"================")
         return response
+    return wrapped
+
+
+def flat(nested_list: list[list]) -> list:
+    """
+    Flatten a nested list.
+    """
+    return [item for sublist in nested_list for item in sublist]
+
+
+def unionize(nested_list: list[list]) -> set:
+    return reduce(set.union, map(set, nested_list))
+
+
+save = lambda obj, path: pickle.dump(obj, open(path, 'wb'))
+
+load = lambda path: pickle.load(open(path, 'rb'))
+
+
+def debug_wrap(engine_func):
+    @wraps(engine_func)
+    def wrapped(self, prompt):
+        print(f"==== Prompt ====")
+        print(prompt)
+        print(f"================")
+        
+        response = engine_func(self, prompt)
+        
+        print(f"=== Response ===")
+        print(response)
+        print(f"================")
+        
+        return response
+
     return wrapped

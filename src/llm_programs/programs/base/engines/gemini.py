@@ -22,7 +22,7 @@ class Gemini():
         genai.configure(api_key=api_key)
 
     
-    def __call__(self, prompt, depth=1):
+    def __call__(self, prompt: str, depth=1) -> str:
         self.n_llm_calls += 1
         timeout = 60 / self.rpm + 1 + random.random()
         if self.debug and depth == 1:
@@ -40,22 +40,22 @@ class Gemini():
                 print(f"================")
                 print()
                 print()
+            if not response.candidates:
+                print(" "*(depth-1) + f"WARN: no candidates")
+                return ""
             return response.text
         except Exception as e:
             time.sleep(timeout * depth)
             err_msg = str(e)
             print(" "*(depth-1) + f"ERR: {err_msg.replace('\n', '   ')}")
-            if response.prompt_feedback:
-                print(" "*(depth-1) + f"ERR FEEDBACK: {response.prompt_feedback}")
-            if not response.candidates:
-                return ""
             if "429" in err_msg:
                 match = re.search(r'seconds:\s*(\d+)', err_msg)
                 if match:
                     n_secs = int(match.group(1))
                     print(" "*(depth-1) + f"sleeping for {n_secs} seconds")
                     time.sleep(n_secs + 1)
-            
+            # if 'response' in locals() and response.prompt_feedback:
+            #     print(" "*(depth-1) + f"ERR FEEDBACK: {response.prompt_feedback}")
             return self.__call__(prompt, depth=depth+1)
  
 
