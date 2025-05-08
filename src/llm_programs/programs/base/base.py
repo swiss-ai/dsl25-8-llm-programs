@@ -1,38 +1,35 @@
-from .locallm import LocalLM
+from llm_programs.programs.types import Prompter, Engine, Parser
+from llm_programs.utils import IDENTITY
+
+from .prompters.prompters import KeywordPrompter
+from .engines import LocalLM
+
+from typing import Any, Callable
 
 
-class FormatMap():
-    def __call__(self, *args, **kwargs):
-        # print(f"args: {args}")
-        # print(f"kwargs: {kwargs}")
-        template = None
-        if args:
-            template = args[0]
-        else:
-            template = kwargs.get("template", None)
-        if template is None:
-            return ' '.join(list(kwargs.values()))
-        elif kwargs:
-            return template.format_map(kwargs)
-        else:
-            return template
+LMProgram = Callable[..., Any]
 
 
-class LMFunction():
-    def __init__(self, prompter=FormatMap(), engine=LocalLM(), parser=lambda x: x):
+class LMFunction:
+    def __init__(
+            self,
+            prompter: Prompter = KeywordPrompter(),
+            engine: Engine = LocalLM(),
+            parser: Parser = IDENTITY):
         self.prompter = prompter
         self.engine = engine
         self.parser = parser
 
     def __call__(self, *args, **kwargs):
         prompt = self.prompter(*args, **kwargs)
-        response_raw = self.engine(prompt)
-        output = self.parser(response_raw)
+        response = self.engine(prompt)
+        output = self.parser(response)
         return output
 
 
 class TemplatedFunction(LMFunction):
-    def __init__(self, template, engine=LocalLM(), parser=lambda x: x):
+    """A special case of LMFunction with a pre-set prompt template"""
+    def __init__(self, template, engine=LocalLM(), parser=IDENTITY):
         super().__init__(engine=engine, parser=parser)
         self.template = template
     
@@ -40,9 +37,3 @@ class TemplatedFunction(LMFunction):
         kwargs["template"] = self.template
         return super().__call__(**kwargs)
 
-
-def lines_parser(response):
-    """
-    Parse the response into a list of lines
-    """
-    return [line.strip() for line in response.split("\n") if line.strip()]
