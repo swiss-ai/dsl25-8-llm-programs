@@ -1,0 +1,477 @@
+[
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.1",
+    "text": "Authorized Users. The following categories of users of the Licensed Materials are recognized as Authorized Users: persons affiliated with the University as students, faculty, registered users or employees, and persons physically present in the University's campus facilities or accessing the Licensed Materials via University controlled Virtual Private Networks (VPNs).",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.2",
+    "text": "Affiliated Author(s). Authors who correctly list themselves as affiliated with the University during the article submission and eRights selection process. Authors shall be deemed affiliated with the University if the email address they provide to [REDACTED] during the article submission process is part of the list of domain names provided by the University or shall be identified through other means as agreed between the University and [REDACTED] during the term of this Agreement. All affiliated authors listed on accepted and published articles must provide valid email addresses including their institutions' domain names and valid ORCIDs, so that [REDACTED] systems can properly identify them as affiliated authors.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.3",
+    "text": "Corresponding Author(s). Authors who are either sole authors or co-authors of articles accepted by [REDACTED] for publication, who are designated by their co-authors to serve as the corresponding author for the accepted article. There can only be a single corresponding author designated for each accepted article. A corresponding author has the authority to represent their co-authors in all publication related matters with [REDACTED] and is responsible for the completion of the [REDACTED] rights assignment process.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.4",
+    "text": "Affiliated Corresponding Authors. Affiliated Authors who are Corresponding Authors.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.5",
+    "text": "Eligible Articles. Article types published by [REDACTED] in the [REDACTED] Digital Library that will automatically be included in the [REDACTED] Open program or will require an Article Processing Charge (APC) upon acceptance without participation in [REDACTED] Open, including articles commonly referred to as Research Articles, Review Articles, Short Papers, Survey Articles, Technical Notes, Tutorials, Interviews, Case Studies, or Notes. Eligible Articles may appear in any of [REDACTED]'s Publications, including but not limited to ICPS Conference or Workshop Proceedings, [REDACTED] Conference or Workshop Proceedings, [REDACTED] Journals, [REDACTED] Magazines, etc. Where [REDACTED] co-publishes a journal or conference proceeding with other publishers, the eligibility of an article to be included in the [REDACTED] Open program may depend on which publisher manages production and author rights, with a list of possible exceptions listed at [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.6",
+    "text": "Open Access. Research articles and outputs in the [REDACTED] Digital Library that are free of all restrictions on access by the general public. Articles published on an Open Access basis as a result of participation in the [REDACTED] Open program or the authors' payment of an Article Processing Charge (APC) shall be perpetually Open Access. Articles that are opened by [REDACTED] in the [REDACTED] Digital Library without participation in [REDACTED] Open or the payment of an APC will be Open Access in the [REDACTED] Digital Library so long as [REDACTED]'s Publications program is financially sustainable. All [REDACTED] authors publishing with [REDACTED] after [REDACTED] retain the copyright to their [REDACTED] published articles and will be given the option of selecting a Creative Commons license to govern the reuse rights for their published articles from the menu of Creative Commons licenses offered during the [REDACTED] eRights selection process following acceptance of their submissions.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.7",
+    "text": "Licensed Materials. The complete contents of the [REDACTED] Digital Library (DL), including [REDACTED]'s entire publication portfolio of journals, magazines, conference proceedings, newsletters, websites, and multimedia files, whose contents are listed at [REDACTED] and the additional content made available to University as enumerated in Section 4, Article 1. This Agreement excludes [REDACTED] Books.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 IV.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 II.8",
+    "text": "Basic and Premium Versions of the [REDACTED] Digital Library Platform. It is [REDACTED]'s intention to transition to a fully Open Access publication model as from [REDACTED]. At this time, all [REDACTED] published articles will be made freely available on both Basic and Premium Versions of the [REDACTED] Digital Library Platform. The Basic Version of the [REDACTED] Digital Library Platform will contain PDF versions of all [REDACTED] published articles, article abstracts, basic search functionality, basic article sharing functionality, basic text and data mining functionality, and other basic features to enable [REDACTED] author compliance with the vast majority of Funder Mandates for Open Access. The Basic Version will be freely accessible by the general public without any authentication, login, or payment requirements. The Premium Version of the [REDACTED] Digital Library Platform will contain a wide range of enhanced content, features, and functionality, including but not limited to access to multiple versions of [REDACTED] published articles, the widely used [REDACTED] Guide to Computing Literature Index, containing the largest curated database of [REDACTED] and non-[REDACTED] abstracts, full-text [REDACTED] and Hosted non-[REDACTED] full-text content, and related search and discovery features, Videos, Research Artifacts, Computer Science Curricula Recommendations, Citation Data, Usage Data, Advanced Search, Content Recommendation Engine, Institutional and Author Profile aggregated data, [REDACTED]'s Computing Classification System, COUNTER 5 Usage Statistics, Social Media integration, Topic Based Collections, AI Enabled Multi-language Article Summaries, Personalization Features, Table of Contents Notifications, Institutional Site Branding and End User Messaging for institutional customers, and additional features currently under development. [REDACTED] Open institutions and their Authorized Users will always have access to the Premium Version of the [REDACTED] Digital Library.",
+    "references": [],
+    "label": "Yes"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.1",
+    "text": "[REDACTED] grants to all Affiliated Corresponding Authors the ability to publish their accepted Eligible Articles with [REDACTED] on an Open Access basis with no fee charged to them as from the initial publication date of their article in both the Basic and Premium Versions of the [REDACTED] Digital Library in perpetuity.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 II.4", "ACM_2024_Agreement_ACM Open 2025-2029 II.5"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.2",
+    "text": "Eligible Articles by Affiliated Corresponding Authors shall be eligible for open access publication under these terms if they are published on or after the Agreement Effective Date or accepted for publication prior to the Agreement's Termination Date. [REDACTED] will unlock articles published after the Effective Date and prior to the Signing Date of the Agreement but are unable to change the rights assignments for such articles. [REDACTED] will not refund APCs paid for Articles published on an Open Access basis as a result of author-paid APCs after the Effective Date but prior to the signing date. [REDACTED] will refund APCs paid for Articles published on an Open Access bases as a result of author-paid APCs after the signing date of the Agreement if the payment of APCs was a result of Publisher-error (i.e. – the [REDACTED] Open Rights system did not properly identify the affiliation of the corresponding author as an [REDACTED] Open institution) and not as a result of incorrect domain names being provided by the author or an incomplete domain name not being provided by the institution.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.3",
+    "text": "All [REDACTED] authors retain copyright ownership of their published Articles unless their employer or government requires their Article be placed in the public domain or require exceptions to this Policy. Copyright shall be jointly owned by all named authors on a published Article and such copyright ownership shall be included on the first page of their published articles. In addition, upon acceptance of their submitted manuscript, [REDACTED] shall provide each Affiliated Corresponding Author with the option to select one of several Creative Commons license options upon acceptance of their peer reviewed manuscript submission with CC-BY as the default option. The exact list of CC options to be provided to [REDACTED] authors shall be determined by the [REDACTED] Publications Board at its sole discretion. The Affiliated Corresponding Author shall determine which of the above Creative Commons options best meets the authors' rights-related needs and complies with their specific research funded requirements, although [REDACTED] Open Licensors shall be entitled to provide a message about these options to affiliated corresponding authors as part of the [REDACTED] Author Rights Selection Workflow.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.4",
+    "text": "[REDACTED] shall deposit copies, on a going-forward basis for the term of this Agreement, of all Eligible Articles authored by Affiliated Authors, with associated metadata, into their University's open repository for open dissemination. Such deposits shall include all Affiliated-Authored Eligible Articles, even if the author is not the Corresponding Author.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 II.2", "ACM_2024_Agreement_ACM Open 2025-2029 II.5"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.5",
+    "text": "Open Access Reporting. In addition to the data available in the self-serve [REDACTED] Open reporting dashboard, [REDACTED] commits to providing data sufficient to assess the outcomes of the Tiered Band Open Access Model on an annual basis, and to a collaborative process for analyzing the data. Specifically, by [REDACTED], [REDACTED], [REDACTED], [REDACTED], and [REDACTED] will provide the following information about the [REDACTED] years, including both annual and cumulative data:\n  i. the number of Open Access Articles published by [REDACTED] where the corresponding or non-corresponding author is affiliated with the University.\n  ii. details of all the Open Access Articles in the material by the Affiliated Author such as title, author name and DOI including funder information.\nBy institution and for all institutions:\n  a) Adoption by institutions: number of institutions that have signed on to the program.\n  b) Open licensing: what sort of author copyright licenses have been selected, in what number and proportion.\n  c) Volume of [REDACTED]: Proportion of [REDACTED] articles overall.\n  d) Impact of the program on [REDACTED]'s business and financial conditions: including impact of the program on [REDACTED] revenues and financial sustainability. [REDACTED] will provide a publicly accessible version of a report providing this information once annually reporting on the previous year's publications-related finances. To date, such reports have been published for [REDACTED], [REDACTED], [REDACTED], and [REDACTED] with the [REDACTED] report planned for the [REDACTED].\n  e) Impact of the program on participating campus publishing volume: publishing output by universities in the program, including Affiliated Corresponding Authors as well as all Affiliated Authors.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 III.6",
+    "text": "Commitment to Open Access Transition. [REDACTED] represents in relation to this [REDACTED] Open Agreement Period that its strategic plan is to transition its entire portfolio of peer-reviewed scholarly publications to a fully Open Access model. Specifically, [REDACTED] represents that it is its intention to transition away from its current \"hybrid\" Open Access model – where some articles are paywalled and others published Open Access – by [REDACTED], provided this transition can be done on an ongoing financially sustainable basis. [REDACTED] commits to informing the University of any changes to this timeframe. In the event [REDACTED] is unable to achieve long-term financial sustainability, [REDACTED] reserves the right to revert to a \"hybrid\" Open Access model.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.1",
+    "text": "This Agreement grants all Authorized Users online access to and use of the following [REDACTED] content (together, the Licensed Materials):\n  a. Online access to the complete contents, features, and functionality of the Premium [REDACTED] Digital Library Platform (DL), including [REDACTED]'s entire publication portfolio of journals, magazines, conference proceedings, [REDACTED] special interest group newsletters, websites, and multimedia files. Access to the [REDACTED] Books Collections ([REDACTED]) is not included in this Agreement but is available for purchase via separate agreement. An up-to-date list of the contents of the [REDACTED] Digital Library is posted at [REDACTED].\n  b. Online access to the [REDACTED] Guide to Computing Literature, the World's largest bibliographic database and abstracting & indexing service dedicated to the field of Computing, which is integrated into the Premium [REDACTED] Digital Library platform. A complete list of Publishers indexed in the [REDACTED] Guide to Computing Literature and related data, features, and functionality of the Premium Version of the [REDACTED] Digital Library can be found at [REDACTED].\n  c. Historical Archive. [REDACTED] shall provide complimentary access to the complete archive of all [REDACTED] Publications dating back to each publication's first issue or volume. All articles published on an Open Access basis as a result of participation in [REDACTED] Open or author-paid APCs shall be perpetually Open Access. All other articles made Open Access in the historical archive may not be deemed to be perpetually Open Access.\n  d. Perpetual Access Rights. [REDACTED] shall have perpetual access rights to all [REDACTED] published articles in the Basic Version of the [REDACTED] Digital Library published during the term of this Agreement. In the event of non-renewal of this [REDACTED] Open Agreement, the University will no longer have access to all of the non-article content and related features and functionality of the Premium [REDACTED] Digital Library platform. No Perpetual Access Rights shall exist for the Premium Version of the [REDACTED] Digital Library platform.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 II.1", "ACM_2024_Agreement_ACM Open 2025-2029 II.7"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.2",
+    "text": "License. [REDACTED] grants to the University and Authorized Users the non-exclusive right to search, [REDACTED], view, print, copy, and download the Licensed Materials for research, teaching, private study, and other noncommercial purposes. University and Authorized Users may not redistribute or make available access to the Licensed Materials for any commercial purposes unless approved by [REDACTED] in writing. The Licensed Materials shall not be made available to anyone who is not an Authorized User except as provided for elsewhere in this Agreement.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 II.1", "ACM_2024_Agreement_ACM Open 2025-2029 IV.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.3",
+    "text": "Access. Global access will be provided to the University based on [REDACTED] Verification, unless otherwise agreed between the parties. [REDACTED] will provide [REDACTED] with a complete list of current [REDACTED] Addresses.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.4",
+    "text": "Alterations. Neither the University nor any Authorized Users may modify, adapt, transform, translate, or create any derivative work based on any of the materials in the Licensed Materials except as provided for in the licenses governing those materials. Any copyright notices, or other notices appearing in the licensed Materials, may not be removed, obscured, or modified in any way. All rights, title, and interest in the contents of the Licensed Materials are the recognized property of the respective copyright holders and no ownership rights, title, or interest are transferred to the University as a part of this Agreement. All users of the [REDACTED] Digital Library are subject to the complete list of [REDACTED] Publications Policies, which are updated from time to time at [REDACTED].",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 IV.6"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.5",
+    "text": "Redistribution. [REDACTED] and Authorized Users may not republish individual articles contained within the Licensed Materials or post them on other servers, or redistribute them to lists, except in accordance with the license terms under which the articles are published. No wholesale duplication of all or substantial sections of the Licensed Materials is permitted under the terms of this Agreement, except to provide for the text and data mining access outlined in Section 4, Article 6. Furthermore, [REDACTED] reserves the right to suspend or terminate this Agreement in accordance with the Term and Termination clause below if systematic downloading of the Licensed Materials is discovered. Notwithstanding the foregoing, University is afforded text and data mining rights outlined in Section 4, Article 6.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 IV.6", "ACM_2024_Agreement_ACM Open 2025-2029 V"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.6",
+    "text": "Computational Access. Authorized Users may use the Licensed Materials to perform and engage in text and/or data mining activities for academic research, scholarship, and other educational purposes and may utilize and share the results of text and/or data mining (\"TDM output\") with research collaborators, and in their scholarly work and make the results available for use by others, so long as the purpose is not to create a product for use by third parties that would substitute for the Licensed Materials. Authorized users may include TDM Output as part of original works of scholarship, e.g., articles that describe, analyze, and interpret research, presentations at academic conferences, and inclusion in an academic thesis.\n\n[REDACTED] will cooperate with University and Authorized Users as reasonably necessary in making the Licensed Materials available in a manner and form most useful to the Authorized Users for computational access. [REDACTED] shall provide this access without any additional fees. University and Authorized Users shall be able to conduct TDM by An API provided by [REDACTED] or a mutually agreed third-party provider.\n\nIn all cases where Licensed Materials offers both HTML/XML and PDF versions of the Licensed Materials, both versions shall be accessible for TDM.\n\nThe Licensed Materials provided for TDM shall be provided in such a manner as to be useful to Authorized Users. For example, there will be no rate or volume limits placed on TDM by [REDACTED] unless there has been evidence of disruption of [REDACTED]'s normal services, and any such limits shall be communicated to University in advance of taking effect.\n\nUses of TDM Output: It is mutually understood that Licensed Materials and \"TDM Output\" (the result of any Text and Data Mining activity or operation, capable of fixation, reproduction and/or communication in any form) provided or generated under this Agreement may be retained by Authorized Users throughout the full lifecycle of the TDM project, including for publication, and as necessary for replication and validation of research results.",
+    "references": [],
+    "label": "Yes"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.7",
+    "text": "Scholarly Sharing. Authorized Users may transmit to a third-party colleague in hard copy or electronically, minimal, insubstantial amounts of the Licensed Materials for personal use or scholarly, educational, or scientific research or professional use but in no case for re-sale. In addition, Authorized Users have the right to use, with appropriate credit, figures, tables and brief excerpts from the Licensed Materials in the Authorized User's own scientific, scholarly and educational works. University and Authorized Users may use metadata and abstracts in lists of publications on faculty and institutional web pages.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.8",
+    "text": "Authors' Rights to Use Their Own Work. Notwithstanding any terms or conditions to the contrary in any author agreement between Authors and [REDACTED] and rights granted to all [REDACTED] authors in Section 2.5 of [REDACTED]'s Copyright Policy, the following rights will be retained by Affiliated Authors: ...",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 II.2", "ACM_2024_Agreement_ACM Open 2025-2029 III.3"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.9",
+    "text": "Inter-Library Loans. Facsimile images that are exact representations of the print pages or of printouts from the electronic database may be provided for interlibrary loan in accordance with Section 108 of the [REDACTED]. Requests may be fulfilled using electronic, paper, or intermediated means and distributed in paper, fax, or digital form.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.10",
+    "text": "Course Reserves. Libraries may include copies of digital content from the Licensed Materials in local electronic course reserve systems limited to use of Authorized Users of current classes.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.11",
+    "text": "No Diminution of Rights. Notwithstanding anything to the contrary in this Agreement, nothing in this Agreement shall be interpreted to diminish the rights and privileges of the University or Authorized Users with respect to any of the Licensed Materials, including exceptions or limitations to the exclusive rights of copyright owners, such as fair use, under 17 U.S.C. §107. Use of content within the Licensed Materials that is made available under a Creative Commons or other open license shall be governed by the provisions of that license.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 III.3"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.12",
+    "text": "Post-Cancellation Perpetual Access. Upon termination of this Agreement, and upon written request from the University, [REDACTED] will provide the University and its Authorized Users with access to the full text of the Perpetual Access Content as granted under Section 4(1)(e) by engaging the services of third-party trusted archives (such as [REDACTED]) and/or participating in collaborative archiving endeavors to exercise its perpetual use rights. The full text of the electronic files may not be resold at any time; this remains in effect in perpetuity. Continuing post cancellation access is subject to the terms and conditions of use in this Agreement.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 IV.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.13",
+    "text": "Quality of Service. [REDACTED] shall use commercially reasonable efforts to ensure that the [REDACTED]'s server or servers have sufficient capacity and rate of connectivity to provide the University and its Authorized Users with a quality of service comparable to current standards in the on-line information provision industry in the University's locale. [REDACTED] shall use reasonable efforts to provide continuous service seven (7) days a week with an average of 98% up-time per month. The 2% down-time includes periodic unavailability due to server maintenance; software installation or testing; loading or making available additional materials licensed under this Agreement as they become available; and unavailability because of service or equipment failure outside the control of [REDACTED] (including problems with public or private telecommunications services, or Internet nodes or facilities). [REDACTED] may schedule brief unavailability periods but shall do so only where (1) it has given at least forty-eight (48) hour notice to the University, and (2) in ways and at times that minimize inconvenience to the University and its Authorized Users, regardless of when notice has been given.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 IV.14",
+    "text": "Accessibility Requirements. [REDACTED] warrants that the materials licensed under this Agreement comply with governmental disabilities laws and regulations and conform to the accessibility requirements of Web Accessibility Initiative, Web Content Accessibility Guidelines (WCAG) 2.1 at level AA. [REDACTED] agrees to promptly respond to and resolve any complaint regarding accessibility of materials licensed under this Agreement.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 V.1",
+    "text": "Term. The term of this Agreement shall be five (5) years, commencing on [REDACTED] (the Effective Date) and extending through [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 V.2",
+    "text": "Early Termination for Financial Hardship. If sufficient funds are not provided, allocated, or allotted in future budgets of the University for library acquisitions to permit University, in the exercise of its reasonable administrative discretion, to continue this Agreement, the University may upon demonstration of the same via appropriate documentation, elect to renegotiate or cancel its participation in this Agreement beginning on January 1st of such subsequent year without further duty or obligation, provided that [REDACTED] is notified by [REDACTED] of the preceding year of such cancellation or renegotiation. [REDACTED] shall be required to provide substantive proof that library budgets have been reduced by a minimum of 5% in order for this Early Termination clause to be valid.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 V.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 V.3",
+    "text": "In the event of termination or expiration, financial obligations under this Agreement shall survive the termination of this Agreement through the end of the calendar year currently in force only, and [REDACTED] will honor the open access terms for Affiliated Corresponding Authors whose articles are accepted for publication through the end of that calendar year. [REDACTED] will not be entitled to any refund or prorated portion of the current year's Licensing Fees.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 V.1", "ACM_2024_Agreement_ACM Open 2025-2029 III.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 V.4",
+    "text": "Termination for Breach. If either party believes that the other has materially breached any obligations under this Agreement, such party so shall notify the breaching party in writing. The breaching party shall have sixty (60) days from the receipt of notice to use all reasonable means to cure the alleged breach and to notify the nonbreaching party in writing that cure has been affected. If the breach is not cured within the sixty (60) day period, the non-breaching party shall have the right to terminate the Agreement without further notice. If this Agreement ends for breach, [REDACTED] may terminate access to the Licensed Materials subject to Section 4, Article 12.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 IV.12"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VI.1",
+    "text": "The [REDACTED]-[REDACTED] Tier-Band Open Access Agreement fee shall be $20,000 the first year ([REDACTED]), $40,000 the second year ([REDACTED]), $60,000 the third year ([REDACTED]), $80,000 the fourth year ([REDACTED]), $95,000 the fifth year ([REDACTED]). These fees are [REDACTED]'s publicly accessible Tiered-Band Open Access Agreement Publish + Read Licensing Tier-based Fee structure, as stated on Schedule A below. Payment will be delivered by the University within net 30 days of receipt of an invoice from [REDACTED].",
+    "references": ["Schedule A"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VI.2",
+    "text": "In the event of non-payment beyond 90 days from the invoice date, [REDACTED] reserves the right to temporarily discontinue the University's participation in [REDACTED] Open until payment has been received. In the event of temporary discontinuation as a result of non-payment, [REDACTED] will not refund or prorate the invoice for the period of discontinued access or offer any refunds for any paid APCs by authors during the period of discontinued access.",
+    "references": ["ACM_2024_Agreement_ACM Open 2025-2029 VI.1"],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VII.1",
+    "text": "User privacy. [REDACTED] undertakes to comply with the [REDACTED] Consensus Principles on Users' Digital Privacy in Library, Publisher, and Software-Provider Systems ([REDACTED] Privacy Principles). As a minimum, [REDACTED] shall not provide University's personally identifiable information in any form to any third party without the University's written authorization, unless the third party owns rights in the Licensed Materials. In all cases, the disclosure of such data shall fully protect the anonymity of individual users and the confidentiality of their searches and will comply with all applicable privacy laws. [REDACTED] shall not disclose or sell to third-parties usage data or information about the University or its Authorized Users without the University's written permission or as required by law. [REDACTED] agrees that no personally identifiable information, including but not limited to log-ins recorded in system logs, [REDACTED] addresses of patrons accessing the system, saved searches, usernames and passwords, will be shared with third parties, except in response to a subpoena, court order, or other legal requirement. If [REDACTED] is compelled by law or court order to disclose personally identifiable information of Authorized Users or patterns of use, [REDACTED] shall provide the University with adequate prior written notice as soon as is practicable, so that University or Authorized Users may seek protective orders or other remedies. [REDACTED] will notify University and Authorized Users as soon as is practicable if [REDACTED]'s systems are breached and the confidentiality of personally identifiable information is compromised.",
+    "references": [],
+    "label": "Yes"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VII.2",
+    "text": "Governing Law. The terms and conditions of this Agreement are governed by the law of Switzerland and to the extent applicable all disputes arising hereunder that cannot otherwise be settled amicably between the Parties shall be subject to the jurisdiction of the courts of [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VII.3",
+    "text": "Warranties. [REDACTED] warrants that it has copyright ownership and/or permission to use all of the materials in the Licensed Materials and to extend the licenses provided herein.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VII.4",
+    "text": "Assignment. This Agreement may not be assigned by either party to any other person or organization, nor may either party sub-contract any of its obligations, without the prior written consent of the other party, for which consent shall not be unreasonably withheld.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "ACM_2024_Agreement_ACM Open 2025-2029 VII.5",
+    "text": "Amendments. All amendments and modifications to this Agreement shall be made in writing and be signed by duly authorized representatives of both parties.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 1",
+    "text": "EFFECTIVE DATE: [REDACTED]",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2",
+    "text": "LICENSOR: [REDACTED] trading as [REDACTED] of [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3",
+    "text": "LICENSEE: [REDACTED] of [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 4",
+    "text": "LICENSED WORKS: shall mean the online [REDACTED] Journals' Science Archive 2008 with Standard Hosting Fee as set out in Schedule A, as the same may be amended from time to time in accordance with clause 4.4 of this Agreement.",
+    "references": ["Oxford_Agreement_2009 4.4"],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 5",
+    "text": "SUBSCRIPTION PERIOD: a period commencing on the Effective Date and continuing in respect of each Licensee, for so long as the Licensee has paid the hosting fees as set out in Schedule B, subject to Clause 3.1 and Clause 8 of this Agreement.",
+    "references": ["Oxford_Agreement_2009 3.1", "Oxford_Agreement_2009 8"],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 6",
+    "text": "THE SITE: The Licensee's premises located at [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 7",
+    "text": "CHARGES: The purchase price and hosting fees set out in Schedule B.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 8",
+    "text": "LICENSEE CONTACT DETAILS: [REDACTED].",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 9",
+    "text": "GOVERNING LAW: This Agreement shall be governed by and construed in accordance with the laws of [REDACTED] and [REDACTED]. The parties agree to submit to the non-exclusive jurisdiction of the English courts in connection with any disputes arising under this Agreement.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 10",
+    "text": "SPECIAL CONDITIONS: Clause 2 of the Licensee Terms shall be amended and the following clauses shall be inserted: \"Subject to payment of the Charges in full by the Licensee, if at any time during the Subscription Period the Licensee wishes to provide Authorised Users with access to the Licensed Works via local loading, it shall notify the Licensor, whereupon the Licensor will, subject to the Licensee signing the Licensor's relevant local loading license agreement, deliver the relevant files to the Licensee.\"",
+    "references": ["Oxford_Agreement_2009 2"],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1",
+    "text": "Licensor grants the Licensee the non-exclusive and non-transferable right for the Subscription Period to allow Authorised Users for the purposes of research, teaching, and private study to:",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1.1",
+    "text": "access the Server by means of a Secure Network in order to search the Licensed Works and to view, retrieve, and display portions thereof;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1.2",
+    "text": "save and print out Single copies of portions of the Licensed Works;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1.3",
+    "text": "incorporate links to the Licensed Works in electronic course packs and course management Systems for use in connection with Courses offered by the Licensee for academic credit provided that no Person other than an Authorised User may use such links;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1.4",
+    "text": "transmit links to single journal articles to other Authorised Users;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.1.5",
+    "text": "provide print or electronic copies of all or any part of the Licensed Works to national or international regulatory authorities for the purposes of, or in anticipation of, regulatory approval and/or trademark applications or other regulatory purposes in respect of the Licensee's products or Services.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2",
+    "text": "For the avoidance of doubt the Licensee and Authorised Users may not:",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2.1",
+    "text": "remove or alter Licensor's copyright notices or other means of identification or disclaimers as they appear in the Licensed Works;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2.2",
+    "text": "systematically make multiple printed or electronic copies of portions of the Licensed Works for any purpose;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2.3",
+    "text": "display or distribute any part of the Licensed Works on any electronic network, including without limitation, the Internet and the World Wide Web, other than the Secure Network;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2.4",
+    "text": "permit anyone other than Authorised Users to access or use the Licensed Works;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.2.5",
+    "text": "use all or any part of the Licensed Works for any Commercial Use.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.3",
+    "text": "Where the Licensee is an academic library, or part of a non-commercial organisation, then notwithstanding any restriction in clause 2.2, the Licensor grants the Licensee the non-exclusive right to supply (whether by post, fax or secure electronic transmission, using Ariel or its equivalent, whereby the electronic file is deleted after printing) to an authorised User of another academic library in the same country as the Licensee or library which is part of a non-commercial organisation in the same country as the Licensee, for the purposes of research or private study and not for commercial use, a single paper copy of an electronic original of an individual document from a journal included in the Licensed Works. The Licensor may request reports in respect of the Licensee's use of the Licensed Works in such inter-library loans, provided the confidentiality of user data shall be maintained.",
+    "references": ["Oxford_Agreement_2009 2.2"],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.4",
+    "text": "If the Licensor ceases to hold the publication rights of any of the Licensed Works, and is no longer able to provide the access, the Licensor shall make all reasonable efforts to ensure that continuing access is provided either:",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.4.1",
+    "text": "by the new publisher of the relevant Licensed Work; or",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.4.2",
+    "text": "through Portico, CLOCKSS, or a similar 3rd party archive and in such case the Licensor shall provide all relevant details of the Licensee to the 3rd party in order to enable access to the 3rd party archive by the Licensee. Such access will be subject to Licensee fulfilling the 3rd party's terms and condition for access; or",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 2.4.3",
+    "text": "by the Licensee with an electronic copy of the relevant Licensed Works for the purpose of local hosting by the Licensee.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.1",
+    "text": "The Licensee will provide all identifying information relating to the Licensee and its Authorised Users required by the Online Registration Materials. The Licensee acknowledges that access to the Licensed Works under this Agreement is conditional upon the Licensee completing the Online Registration Materials. The Licensee will amend the Online Registration Materials promptly following any additions, deletions or other alterations to the information supplied.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.2",
+    "text": "The Licensee will obtain at its cost all telecommunications and other equipment and software (including an Internet browser and portable document file reader) together with all relevant software licenses necessary to access the Licensed Works online via the Licensee's Secure Network.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.3",
+    "text": "The Licensee shall: (a) be responsible for the confidentiality and all use of the Password(s); (b) use all reasonable efforts to ensure that only Authorised Users are permitted access to the Licensed Works by means of the Licensee's Secure Network; (c) ensure that all Authorised Users are made aware that the Licensed Works are protected by copyright and the Authorised Users' use of the Licensed Works is subject to the restrictions and obligations contained in this Agreement.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.4",
+    "text": "The Licensee will notify Licensor immediately if it becomes aware of any of the following: (a) any loss or theft of the Password(s); (b) any unauthorised use of any of the Password(s); or (c) any breach by an Authorised User of the terms of this Agreement.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.5",
+    "text": "The Licensee shall notify Licensor promptly (i) of the facts and circumstances surrounding any unauthorised access, possession, or use of the Licensed Works, or Licensor intellectual property, or any portion thereof; and (ii) on becoming aware of any claim by any third party that the Licensed Works infringes an intellectual property or proprietary right of any third party.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 3.6",
+    "text": "Upon becoming aware of any breach of the terms of this Agreement by an Authorised User, the Licensee shall promptly initiate disciplinary procedures in accordance with the Licensee's standard practice.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 4.1",
+    "text": "Licensor shall provide the Licensee with a customer number necessary to enable the Licensee to submit the Online Registration Materials.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 4.2.1",
+    "text": "to make the Licensed Works available by means of the World Wide Web to the Licensee throughout the Subscription Period;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 4.2.2",
+    "text": "to ensure that the Server has sufficient capacity and rate of connectivity to provide the Licensee with a quality of service consistent with current standards in the World Wide Web on-line information provision industry;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "Oxford_Agreement_2009 4.2.3",
+    "text": "to restore access to the Licensed Works as soon as possible in the event of an interruption or suspension of the service.",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "SciPost_2024_Agreement Benefits.1",
+    "text": "Inclusion in the online listing of Sponsors on the [REDACTED] website;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "SciPost_2024_Agreement Benefits.2",
+    "text": "A seat on the [REDACTED] Sponsors Board, including access to yearly meetings;",
+    "references": [],
+    "label": "No"
+  },
+  {
+    "id": "SciPost_2024_Agreement Benefits.3",
+    "text": "Opportunities to interact and discuss with [REDACTED] representatives and provide feedback and suggestions.",
+    "references": [],
+    "label": "No"
+  },
+  
+]
