@@ -22,8 +22,9 @@ logger = logging.getLogger(__name__)
 
 results_dir = Path("./results/redaction/synth/")
 
-engine = Gemini(model_name="gemma-3-27b-it", debug=True)
+# engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=True)
 # engine = DummyLM()
+engine = LocalLLM(model_name="gemma-3-27b-it")
 
 one_call_one_prompt_fn = LMFunction(prompter=AutoPrompter(TEMPLATE_FILTER_ALL), engine=engine, parser=lines_parser)
 
@@ -44,13 +45,8 @@ n_calls_m_prompts_fn_or = partial(n_calls_m_prompts_fn, aggr_fn=set.union)
 n_calls_m_prompts_fn_and = partial(n_calls_m_prompts_fn, aggr_fn=set.intersection)
 
 
-def unionize_windows(method: Callable[[str], list[str]], doc: Document, **win_kw) -> list[str]:
+def unionize_windows(method: Callable[[str], list[str]], doc: Document, **win_kw) -> set[str]:
     return unionize(method(window) for window in doc.windows(**win_kw))
-    # ret = set()
-    # for window in doc.windows():
-    #     keywords = method(window)
-    #     ret.update(*keywords)
-    # return ret
 
 
 class RedactionExperiment:

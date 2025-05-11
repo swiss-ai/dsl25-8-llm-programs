@@ -41,40 +41,44 @@ class DocumentDirectory():
         return DocumentDirectory.from_md_texts(path, ((md_path.stem, md_path.read_content()) for md_path in md_paths))
                                                
     @staticmethod
-    def from_md_texts(path: Path, entries):
+    def from_md_texts(path: Path, entries, exist_ok=False):
         """Make a DocumentDirectory from .md texts"""
-        return DocumentDirectory.from_md_texts_aux(path, (DocumentEntry(md_name, md_text, {}) for md_name, md_text in entries))
+        return DocumentDirectory.from_md_texts_aux(path, (DocumentEntry(md_name, md_text, {}) for md_name, md_text in entries), exist_ok=exist_ok)
    
-    def from_md_texts_aux(path: Path, entries: Iterable[DocumentEntry]):
-        path.mkdir(parents=True, exist_ok=False)
+    @staticmethod
+    def from_md_texts_aux(path: Path, entries: Iterable[DocumentEntry], exist_ok=False):
+        path.mkdir(parents=True, exist_ok=exist_ok)
         for md_name, md_text, kwargs in entries:
-            print(f"{md_name=}")
-            print(f"md_text={md_text[:100]}")
-            print(f"{kwargs=}")
-            (path / md_name).mkdir(parents=True, exist_ok=False)
-            logger.debug(f"mk_from_md_texts: writing main to {path / md_name / f'{md_name}.md'}")
+            (path / md_name).mkdir(parents=True, exist_ok=exist_ok)
+            logger.debug(f"mk_from_md_texts_aux: writing main to {path / md_name / f'{md_name}.md'}")
             (path / md_name / f"{md_name}.md").write_text(md_text)
             for kw in kwargs:
                 aux_text = kwargs[kw]
-                print(f"aux_text={aux_text}")
-                logger.debug(f"mk_from_md_texts: writing {kw} to {path / md_name / f'{md_name}.{kw}.md'}")
+                logger.debug(f"mk_from_md_texts_aux: writing {kw} to {path / md_name / f'{md_name}.{kw}.md'}")
                 (path / md_name / f"{md_name}.{kw}.md").write_text(aux_text)
         return DocumentDirectory(path)
 
     @staticmethod
-    def find_or_make(path: Path, fn: callable):
+    def find_or_make(path: Path, fn: Callable):
         if path.exists():
             return DocumentDirectory(path)
         else:
             return fn(path)
 
+    def subdirs(self):
+        """
+        Iterate over subdirectories
+        """
+        for subdir in sorted(self.path.iterdir()):
+            if subdir.is_dir():
+                yield subdir
+
     def docs(self):
         """
         Iterate over subdirectories/docs
         """
-        for subdir in self.path.iterdir():
-            if subdir.is_dir():
-                yield Document(subdir)
+        for subdir in self.subdirs():
+            yield Document(subdir)
     
     def get_total_n_pages(self):
         return sum(doc.get_n_pages() for doc in self.docs())
@@ -127,6 +131,23 @@ class Document():
         content = re.sub(r"\n{2,}", "\n\n", content)
         for i in range(0, len(content), stride):
             yield content[i:i+size]
+    
+    def redact(self, keywords: list[str], regexes: list, redaction="[REDACTED]"):
+        """
+        Redact keywords in the document
+        """
+        delimeter_pattern = PAGE_DELIMETER.pattern
+        capturing_delimiter_pattern = f'({delimeter_pattern})'
+        content = self.read()
+        parts = re.split(capturing_delimiter_pattern, content)
+        keywords.sort(key=len, reverse=True)
+        for regex in regexes:
+            content = regex.sub(redaction, content)
+        for keyword in keywords:
+            keyword_re = word_boundary_pattern(keyword)
+            content = re.sub(keyword_re, redaction, content)
+        return content
+        
 
     def get_n_pages(self):
         return sum(1 for _ in self.pages())
@@ -144,6 +165,8 @@ class Document():
 class DocumentTransform():
     """
     A helper to execute transforms on a DocDir
+
+    TODO delete this class and 
     """
     def __init__(self, src: DocumentDirectory, dest_path: Path):
         self.src = src
@@ -152,16 +175,23 @@ class DocumentTransform():
     def __repr__(self):
         return f"DocTransform({self.src.name}, {self.dest_path.name})"
 
-    def apply(self, func: Callable[[str], [str]], debug=False):
+    def apply(self, func: Callable[[Document], [str]], aux=False, exist_ok=False):
         """
         Apply a function to each document in the directory
         """
         assert self.src.path.exists(), f"Source directory {self.src.path} does not exist"
-        assert not self.dest_path.exists(), f"Destination directory {self.dest_path} already exists"
-        return DocumentDirectory.from_md_texts(self.dest_path,
-                                               ((doc.md_file.stem, func(doc.read())) for doc in self.src.docs()))
+        if not exist_ok: assert not self.dest_path.exists(), f"Destination directory {self.dest_path} already exists"
+        if not aux:
+            stream = ((doc.md_file.stem, func(doc)) for doc in self.src.docs())
+            return DocumentDirectory.from_md_texts(self.dest_path, stream, exist_ok=exist_ok)
+        else:
+            def make_entry(doc):
+                new_content, kwargs = func(doc)
+                return DocumentEntry(doc.md_file.stem, new_content, kwargs)
+            stream = (make_entry(doc) for doc in self.src.docs())
+            return DocumentDirectory.from_md_texts_aux(self.dest_path, stream, exist_ok=exist_ok)
 
-
+   
 Doc = Document
 DocDir = DocumentDirectory
 DocTransform = DocumentTransform
@@ -184,20 +214,6 @@ def wrap(text, width=200):
     return textwrap.fill(text, width=width, replace_whitespace=False)
 
 
-def debug_wrap(engine):
-    '''TODO fix'''
-    def wrapped(prompt):
-        print(f"==== Prompt ====")
-        print(prompt)
-        print(f"================")
-        response = engine(prompt)
-        print(f"=== Response ===")
-        print(response)
-        print(f"================")
-        return response
-    return wrapped
-
-
 def flat(nested_list: list[list]) -> list:
     """
     Flatten a nested list.
@@ -205,7 +221,7 @@ def flat(nested_list: list[list]) -> list:
     return [item for sublist in nested_list for item in sublist]
 
 
-def unionize(nested_list: list[list]) -> set:
+def unionize(nested_list: Iterable[Iterable]) -> set:
     return reduce(set.union, map(set, nested_list))
 
 
@@ -230,3 +246,12 @@ def debug_wrap(engine_func):
         return response
 
     return wrapped
+
+
+def word_boundary_pattern(word: str) -> str:
+    """
+    Returns a regex pattern that matches the given word as a whole word using \b.
+    Properly escapes any special characters in the input word.
+    """
+    escaped_word = re.escape(word)
+    return rf'\b{escaped_word}\b'

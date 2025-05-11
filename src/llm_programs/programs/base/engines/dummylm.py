@@ -9,7 +9,7 @@ class DummyLM:
         self.latency = latency
         self.n_llm_calls = 0
 
-    @debug_wrap
+    # @debug_wrap
     def __call__(self, prompt):
         logger.debug("DummyLM.__call__")
         sleep(self.latency)

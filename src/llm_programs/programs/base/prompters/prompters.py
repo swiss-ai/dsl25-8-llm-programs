@@ -11,9 +11,6 @@ class ArgsPrompter(Prompter):
         self.n_args = len(order)
 
     def __call__(self, *args) -> str:
-        print(f"{self.template=}")
-        print(f"{self.n_args=}")
-        print("ARGS:", args)
         assert len(args) == self.n_args, f"Expected {self.n_args} args, got {len(args)}"
         ctx = {self.order[i]: args[i] for i in range(self.n_args)}
         return self.template.format_map(ctx)
