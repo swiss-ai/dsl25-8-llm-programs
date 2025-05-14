@@ -6,7 +6,7 @@ from pathlib import Path
 from functools import partial, reduce
 from typing import Callable
 
-from llm_programs.programs.base.engines import Gemini, DummyLM
+from llm_programs.programs.base.engines import Gemini, DummyLM, LocalLM
 from llm_programs.programs.base.parsers import lines_parser
 from llm_programs.programs.base.prompters import AutoPrompter, ArgsPrompter
 
@@ -24,7 +24,7 @@ results_dir = Path("./results/redaction/synth/")
 
 # engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=True)
 # engine = DummyLM()
-engine = LocalLLM(model_name="gemma-3-27b-it")
+engine = LocalLM(model_name="gemma-3-27b-it")
 
 one_call_one_prompt_fn = LMFunction(prompter=AutoPrompter(TEMPLATE_FILTER_ALL), engine=engine, parser=lines_parser)
 

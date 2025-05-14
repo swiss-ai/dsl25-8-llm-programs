@@ -141,11 +141,14 @@ class Document():
         content = self.read()
         parts = re.split(capturing_delimiter_pattern, content)
         keywords.sort(key=len, reverse=True)
+        for keyword in keywords:
+            if len(keyword) <= 3:
+                keyword_re = word_boundary_pattern(keyword)
+                content = re.sub(keyword_re, redaction, content)
+            else:
+                content = content.replace(keyword, redaction)
         for regex in regexes:
             content = regex.sub(redaction, content)
-        for keyword in keywords:
-            keyword_re = word_boundary_pattern(keyword)
-            content = re.sub(keyword_re, redaction, content)
         return content
         
 
