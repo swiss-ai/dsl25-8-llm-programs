@@ -9,7 +9,7 @@ The aim of our project was two-fold:
 ### Aim 1: Blueprints
 
 To effectively develop LLM programs, we have found it most convenient to wrap LLM calls into *"LLM Functions"* (functions in the sense of subroutines), as this allows us to employ them in standard, idiomatic ways.
-For instance, if we have an unary predicate LLM function (that is, LLM-implemented subroutine of one argument that returns a boolean, type signature `Callable[[Any], bool]`), we may use it the built-in higher-order functions `map` or `filter`, or as a condition in an `if`-statement or a `while`-loop.
+For instance, if we have an unary predicate LLM function (that is, LLM-implemented subroutine of one argument that returns a boolean, type signature `Callable[[Any], bool]`), we may use it the built-in higher-order functions `map` or `filter`, or in a condition of an `if`-statement or a `while`-loop.
 Or, for instance, we may apply a generic evolutionary search algorithm (e.g. within the DEAP framework) on a population of strings, with a binary LM function implementing the cross-over operator.
 
 The code for LLM Functions and Programs is in the `llm_programs.programs` subpackage at `src/llm_programs/programs`.
@@ -58,7 +58,7 @@ class LMFunction:
         return output
 ```
 
-Note: other realisations of LM-based functions are possible, for instance involving logits, or evaluating conditioned probabilities of specific strings, like `Yes` or `No`.
+Note: other renditions of LM-based functions are possible, for instance involving logits, or evaluating conditional probabilities of specific strings, like `Yes` or `No`.
 
 ### LM Function showcase
 
@@ -129,7 +129,7 @@ uv pip install -e '.[dev]'
 
 ## Running examples
 
-Please see the notebook [sample.py](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/notebooks/sample.ipynb). \
+Please see the notebook [sample.pynb](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/notebooks/sample.ipynb). \
 It contains:
 - The LM Function examples from this README
 - Synthetic document redaction
