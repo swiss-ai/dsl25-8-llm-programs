@@ -73,7 +73,9 @@ LM Programs build upon LM Functions. This repository features:
 ```sh
 git clone git@github.com:swiss-ai/dsl25-8-llm-programs.git
 cd dsl25-8-llm-programs
-pip install -e .
+conda create -n env3.12-dsl-repr python=3.12 -y
+conda activate env3.12-dsl-repr
+uv pip install -e .
 ```
 
 ## Running examples
