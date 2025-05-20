@@ -1,6 +1,34 @@
 # LLM Program Blueprints
 ## ETH Zurich Data Sc. Lab Spring 2025 Team #8
 
+LLM Programs (also known as *compound systems*, *LLM workflows and agents*, or *LLM-based algorithms*) are classical programs with some subroutines implemented via LLM calls.
+The aim of our project was two-fold:
+1. to draft a collection of blueprints and lessons-learned for LLM Programs,
+2. to write LLM Programs to redact and search through the paragraphs of several hundred contracts for a specific subject (*"AI compliance"*).
+
+### Aim 1: Blueprints
+
+To effectively develop LLM programs, we have found it most convenient to wrap LLM calls into *"LLM Functions"* (functions in the sense of subroutines), as this allows us to employ these in standard, idiomatic ways.
+For instance, if we have an unary predicate LLM function (that is, LLM-implemented subroutine of one argument that returns a boolean, type signature `Callable[[Any], bool]`), we may use it the built-in higher-order functions `map` or `filter`, or as a condition in an `if`-statement or a `while`-loop.
+Or, for instance, we may apply a generic evolutionary search algorithm (e.g. within the DEAP framework) on a population of strings, with a binary LM function implementing the *cross-over* operator.
+
+The code for LLM Functions and Programs is in the `llm_programs.programs` subpackage at `src/llm_programs/programs`.
+The `llm_programs.programs.base` subpackage contains definitions of the LM Function, some prompters, engines, and parsers, notably prompters for n-ary functions, and parsers for predicate functions (for clarifications see the *LM Functions* section below).
+The `llm_programs.programs.collection` subpackage contains some LLM Programs building on `base`.
+We have *not* implemented every single LLM program we have encountered in the literature review, but only those that promised to be useful in the contract processing tasks.
+However, given the functional abstraction, writing any particular LLM programming pattern (e.g. *Vote* or *Filter-Vote*) becomes fairly easy with use of built-in or standard-library primitives.
+
+### Aim 2: Processing Contracts
+
+Code related to our practical tasks is in the `llm_programs.tasks` subpackage. It includes code for cleaning, redaction, synthetic contract generation and paragraph retrieval (TODO add).
+
+### TLDR: Most important .py files
+
+- [`src/llm_programs/programs/base/base.py`](http://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/programs/base/base.py): LM Function blueprint
+- [`src/llm_programs/programs/collection/collection.py`](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/programs/collection/collection.py): Select LM Programs
+- [`src/llm_programs/tasks/complete_pipeline.py`](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/tasks/complete_pipeline.py): The contracts processing pipeline: cleaning and redaction
+- TODO add code link for paragraph retrieval
+
 ## LM Functions
 
 In our implementation, an LM Function is a function composed of three parts: a prompter, an LM engine, and a parser:
@@ -47,3 +75,7 @@ git clone git@github.com:swiss-ai/dsl25-8-llm-programs.git
 cd dsl25-8-llm-programs
 pip install -e .
 ```
+
+## Running examples
+
+TODO!
