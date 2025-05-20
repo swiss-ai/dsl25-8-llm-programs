@@ -128,4 +128,7 @@ uv pip install -e '.[dev]'
 
 ## Running examples
 
-TODO!
+Please see the notebook [sample.py](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/notebooks/sample.ipynb). \
+It contains:
+- The LM Function examples from this README
+- Synthetic document redaction
