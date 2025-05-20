@@ -22,9 +22,15 @@ logger = logging.getLogger(__name__)
 
 results_dir = Path("./results/redaction/synth/")
 
-# engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=True)
+PREFER_LOCAL = False
+
+
+if PREFER_LOCAL:
+    engine = LocalLM(model_name="gemma-3-27b-it")
+else:
+    engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=True)
 # engine = DummyLM()
-engine = LocalLM(model_name="gemma-3-27b-it")
+
 
 one_call_one_prompt_fn = LMFunction(prompter=AutoPrompter(TEMPLATE_FILTER_ALL), engine=engine, parser=lines_parser)
 
@@ -35,11 +41,11 @@ m_fns = [LMFunction(prompter=AutoPrompter(template), engine=engine, parser=lines
 def one_call_m_prompts_fn(content: str) -> list[str]:
     return list(set(flat(fn(content) for fn in m_fns)))
 
-## TODO Amplifier Pattern
 
 def n_calls_m_prompts_fn(content: str, n = 4, aggr_fn: Callable[[set[str], set[str]], set[str]] = set.union) -> list[str]:
     outputs = [one_call_m_prompts_fn(content) for _ in range(n)]
     return list( reduce(lambda a, b: aggr_fn(set(a), set(b)), outputs ) )
+
 
 n_calls_m_prompts_fn_or = partial(n_calls_m_prompts_fn, aggr_fn=set.union)
 n_calls_m_prompts_fn_and = partial(n_calls_m_prompts_fn, aggr_fn=set.intersection)
