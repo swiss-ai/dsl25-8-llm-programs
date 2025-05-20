@@ -1,7 +1,7 @@
 # LLM Program Blueprints
 ## ETH Zurich Data Sc. Lab Spring 2025 Team #8
 
-LLM Programs (also known as *compound systems*, *LLM workflows and agents*, or *LLM-based algorithms*) are classical programs with some subroutines implemented via LLM calls.
+LLM Programs (also known as *compound LLM systems*, *LLM workflows and agents*, or *LLM-based algorithms*) are classical programs with some subroutines implemented via LLM calls.
 The aim of our project was two-fold:
 1. to draft a collection of blueprints and lessons-learned for LLM Programs,
 2. to write LLM Programs to redact and search through the paragraphs of several hundred contracts for a specific subject (*"AI compliance"*).
@@ -73,7 +73,6 @@ template = '''Is the following statement true? \'{statement}\'
 Begin your answer with "Yes" or "No".'''
 prompter = AutoPrompter(template)
 
-# NOTE: You must set the GEMINI_API_KEY envvar
 engine = Gemini(debug=True)
 
 # The parser will return a boolean value (True for Yes, False for No)
