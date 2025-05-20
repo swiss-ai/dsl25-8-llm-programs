@@ -1,0 +1,5 @@
+This contract outlines the terms and conditions for the licensing of books and online materials between MIT and Springer Nature. Massachusetts Institute of Technology, referred to as MIT, grants Springer Nature a non-exclusive license to reproduce, distribute, and display selected academic publications in digital format. The agreement covers both e-books and supplemental online resources. Pricing for individual items will be $12.50 and EUR 9.99.
+
+John Doe, representing Springer Nature (john.doe@springernature.com, +44 1632 960254), and Alice Smith (a.smith@mit.edu) representing MIT, will oversee the implementation of this agreement. The duration of the license is specified as a period of five years, commencing on 2014/03/28.
+
+Access to the online materials will be controlled via IP address authentication, specifically 192.168.1.10 and 172.16.0.5, assigned to Massachusetts Institute of Technology. The contract also stipulates usage rights, including limitations on simultaneous users and restrictions against commercial redistribution without prior written consent. Contact information for legal inquiries: +1 212 555 1234 (fax).
