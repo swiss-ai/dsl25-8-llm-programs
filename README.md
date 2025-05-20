@@ -69,7 +69,8 @@ from llm_programs.programs import LMFunction, AutoPrompter, Gemini, YesNoPredica
 
 # There is only *one* placeholder in the prompt template,
 # so AutoPrompter will result in a *unary* function.
-template = '''Is the following statement true? \'{statement}\' Begin your answer with "Yes" or "No".'''
+template = '''Is the following statement true? \'{statement}\'
+Begin your answer with "Yes" or "No".'''
 prompter = AutoPrompter(template)
 
 # NOTE: You must set the GEMINI_API_KEY envvar
@@ -92,7 +93,7 @@ statements = [
 print("True statements:", list(filter(factcheck, statements)))
 ```
 
-An example of the [*evaluator-optimizer*](https://www.anthropic.com/engineering/building-effective-agents) workflow in a mere couple of lines:
+An example of the [*evaluator-optimizer*](https://www.anthropic.com/engineering/building-effective-agents) workflow in a mere couple of lines (`while`-loop):
 
 ```py
 prompt = '''Invent a new plausible realistic fact about penguins that sounds true
