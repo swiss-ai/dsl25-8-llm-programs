@@ -67,7 +67,8 @@ The below code shows how to construct a simple factchecking LM function that can
 ```py
 from llm_programs.programs import LMFunction, AutoPrompter, Gemini, YesNoPredicateParser
 
-# There is only *one* placeholder in the prompt template, so AutoPrompter will result in a *unary* function.
+# There is only *one* placeholder in the prompt template,
+# so AutoPrompter will result in a *unary* function.
 template = '''Is the following statement true? \'{statement}\' Begin your answer with "Yes" or "No".'''
 prompter = AutoPrompter(template)
 
@@ -94,8 +95,8 @@ print("True statements:", list(filter(factcheck, statements)))
 An example of the [*evaluator-optimizer*](https://www.anthropic.com/engineering/building-effective-agents) workflow in a mere couple of lines:
 
 ```py
-prompt = '''Invent a new plausible realistic fact about penguins that sounds true but is actually subtly false.
-State it in one very brief sentence.'''
+prompt = '''Invent a new plausible realistic fact about penguins that sounds true
+but is actually subtly false. State it in one very brief sentence.'''
 
 generate = LMFunction(
     prompter=AutoPrompter(prompt),
