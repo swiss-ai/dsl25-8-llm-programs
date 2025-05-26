@@ -24,6 +24,7 @@ dependencies = [
     "v-agents",
     "transformers",
     "python-dotenv",
+    "rich",
 ]
 
 [project.optional-dependencies]

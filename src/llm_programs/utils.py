@@ -9,6 +9,10 @@ import pickle
 from typing import Dict, Iterable, Callable, NamedTuple
 from functools import reduce, wraps
 
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -258,3 +262,16 @@ def word_boundary_pattern(word: str) -> str:
     """
     escaped_word = re.escape(word)
     return rf'\b{escaped_word}\b'
+
+
+def textify(panel: Panel) -> Text:
+  console = Console(width=120)
+  with console.capture() as capture:
+      console.print(panel)
+  return Text.from_ansi(capture.get())
+
+
+def debug_panel(logger, title, text):
+    panel = Panel(text, title=title)
+    logger.debug(f"\n{textify(panel)}")
+

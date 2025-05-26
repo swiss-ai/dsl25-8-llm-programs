@@ -1,16 +1,19 @@
 import fire
 import logging
 import sys
+import time
 
 from pathlib import Path
 from functools import partial, reduce
-from typing import Callable
+from typing import Any, Callable
+
+from rich.logging import RichHandler
 
 from llm_programs.programs.base.engines import Gemini, DummyLM, LocalLM
 from llm_programs.programs.base.parsers import lines_parser
 from llm_programs.programs.base.prompters import AutoPrompter, ArgsPrompter
 
-from llm_programs.utils import DocumentDirectory, Document, flat, unionize, save
+from llm_programs.utils import DocumentDirectory, Document, flat, unionize, save, load
 from llm_programs.tasks.contract_generation.redaction.generate import generate_contract_aux
 from llm_programs.programs.base import LMFunction, LMProgram, TemplatedFunction
 
@@ -18,17 +21,24 @@ from .templates import TEMPLATE_FILTER_ALL, REDACTION_TEMPLATES
 from .metrics import measure_naive_precision_recall, measure_redaction_precision_recall
 
 import logging
-logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.WARNING,
+    format="%(message)s",
+    handlers=[RichHandler()]
+)
+logger = logging.getLogger("rich")
+logger.setLevel(logging.DEBUG)
 
 results_dir = Path("./results/redaction/synth/")
 
 PREFER_LOCAL = False
+DEBUG = False
 
 
 if PREFER_LOCAL:
     engine = LocalLM(model_name="gemma-3-27b-it")
 else:
-    engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=True)
+    engine = Gemini(model_name="gemma-3-27b-it", rpm=30, debug=DEBUG)
 # engine = DummyLM()
 
 
@@ -55,49 +65,82 @@ def unionize_windows(method: Callable[[str], list[str]], doc: Document, **win_kw
     return unionize(method(window) for window in doc.windows(**win_kw))
 
 
+def compare(xs, ys):
+    return tuple(y - x for x, y in zip(xs, ys))
+
+
 class RedactionExperiment:
     def __init__(self):
-        pass
-
-    def full_synth_eval(self):
-        n_samples = 10
-        seed = 42
-        window_size = 10_000
-        window_offset = 100
-        window_stride = window_size - window_offset
+        # method_key -> method_fn
         # LMPrograms should accept str (window content) and return list[str] (redacted substrings)
-        methods: dict[str, Callable[[str], list[str]]] = {
+        self.methods: dict[str, Callable[[str], list[str]]] = {
             "1 call, 1 prompt": one_call_one_prompt_fn,
             "1 call, M prompts": one_call_m_prompts_fn,
             "N calls, M prompts, OR": n_calls_m_prompts_fn_or,
             "N calls, M prompts, AND": n_calls_m_prompts_fn_and,
-            # "1 calls, double-checked" : ...
+            # "1 call, M prompts, double-checked" : ...
         }
-        data_dd: DocumentDirectory = self.get_or_gen_synth_contracts(n_samples=n_samples, seed=seed)
-        results = {}
-        for method_name, method in methods.items():
-            logger.debug(f"evaluating method: {method_name}")
-            results[method_name] = {}
-            for doc in data_dd.docs():
-                logger.debug(f"evaluating document: {doc.name}")
-                contract = doc.read()
-                true_keywords = eval(doc.read_aux("info"))
-                true_keywords = [v for k in true_keywords for v in true_keywords[k]]
-                pred_keywords = unionize_windows(method, doc, size=window_size, stride=window_stride)
-                naive_precision, naive_recall = measure_naive_precision_recall(contract, true_keywords, pred_keywords)
-                red_precision, red_recall = measure_redaction_precision_recall(contract, true_keywords, pred_keywords)
-                results[method_name][doc.name] = {
-                    "naive_precision": naive_precision,
-                    "naive_recall": naive_recall,
-                    "red_precision": red_precision,
-                    "red_recall": red_recall,
-                    "pred_keywords": pred_keywords,
-                }
-        save(results, (results_dir / f"eval_n{n_samples}_seed{seed}.pkl"))
-        logger.debug(f"{engine.n_llm_calls=}")
-       
-    def eval(self):
-        pass
+        self.results = {}
+
+    def eval_method(self,
+                    key: Any,
+                    method_fn: Callable[[str], list[str]],
+                    data_dd: DocumentDirectory,
+                    window_size: int,
+                    window_stride: int,
+                    save_path: str | Path
+                    ) -> None:
+        # logger.debug(f"Evaluating method: {key}")
+        self.results[key] = {}
+        for doc in data_dd.docs():
+            if key in self.results and doc.name in self.results[key]:
+                logger.debug(f"Skipping: [key = {key}] [doc = {doc.name}]")
+                continue
+            logger.debug(f"Evaluating document: {doc.name}")
+            contract = doc.read()
+            true_keywords = eval(doc.read_aux("info"))
+            true_keywords = [v for k in true_keywords for v in true_keywords[k]]
+            time_before = time.perf_counter_ns()
+            counters_before = engine.counters # type: ignore
+            pred_keywords = unionize_windows(method_fn, doc, size=window_size, stride=window_stride)
+            elapsed_ms = (time.perf_counter_ns() - time_before) // 1_000_000 # in milliseconds
+            counters_diff = compare(counters_before, engine.counters) # type: ignore
+            n_calls, n_in_chars, n_out_chars = counters_diff
+            logger.debug(f"Method `{key}` evaluated on `{doc.name}` in {elapsed_ms // 1000} s, "
+                         f"{n_calls} calls, {n_in_chars} input chars, {n_out_chars} output chars.")
+            naive_precision, naive_recall = measure_naive_precision_recall(contract, true_keywords, pred_keywords)
+            red_precision, red_recall = measure_redaction_precision_recall(contract, true_keywords, pred_keywords)
+            self.results[key][doc.name] = {
+                "naive_precision": naive_precision,
+                "naive_recall": naive_recall,
+                "red_precision": red_precision,
+                "red_recall": red_recall,
+                "pred_keywords": pred_keywords,
+                "time_ms": elapsed_ms,
+                "n_calls": n_calls, 
+                "n_in_chars": n_in_chars,
+                "n_out_chars": n_out_chars,
+            }
+            save(self.results, save_path)
+    
+    def eval_with_different_window_sizes(self):
+        window_size_range = [100, 200, 400, 800, 1600, 3200, 6400, 12_800][::-1] #  25_600, 51_200, 102_400]
+        window_stride_range = [window_size - 50 for window_size in window_size_range]
+        n_document_samples = 10
+        seed = 42
+        save_path = results_dir / f"eval_windows_ndocs{n_document_samples}_seed{seed}.pkl"
+        self.results = load(save_path) if save_path.exists() else {}
+        data_dd: DocumentDirectory = self.get_or_gen_synth_contracts(n_samples=n_document_samples, seed=seed)
+        for window_size, window_stride in zip(window_size_range, window_stride_range):
+            for method_key, method_fn in self.methods.items():
+                key = (method_key, window_size)
+                if key in self.results:
+                    logger.debug(f"Skipping: [key = {key}]")
+                    continue
+                logger.debug(f"Evaluating method: {method_key} with window size {window_size} and stride {window_stride}")
+                self.eval_method(key, method_fn, data_dd, window_size=window_size, window_stride=window_stride, save_path=save_path)
+                logger.debug(f"Evaluated  method: {method_key} with window size {window_size} and stride {window_stride}")
+                save(self.results, save_path)
 
     def get_or_gen_synth_contracts(self, n_samples, seed=42) -> DocumentDirectory:
         path = Path("./data/contracts/synth/") / f"docs_n{n_samples}_seed{seed}"
@@ -123,11 +166,8 @@ class RedactionExperiment:
 
 if __name__ == "__main__":
     """
-    Usage:
-        python -m src.llm_programs.tasks.redaction.eval full_synth_eval
+    Example usage:
+        python -m src.llm_programs.tasks.redaction.eval eval_with_different_window_sizes
     """
-    logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                        stream=sys.stdout)
     fire.Fire(RedactionExperiment)
 
