@@ -27,7 +27,6 @@ Code related to our practical tasks is in the `llm_programs.tasks` subpackage. I
 - [`src/llm_programs/programs/base/base.py`](http://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/programs/base/base.py): LM Function blueprint
 - [`src/llm_programs/programs/collection/collection.py`](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/programs/collection/collection.py): Select LM Programs
 - [`src/llm_programs/tasks/complete_pipeline.py`](https://github.com/swiss-ai/dsl25-8-llm-programs/blob/main/src/llm_programs/tasks/complete_pipeline.py): The contracts processing pipeline: cleaning and redaction
-- TODO add code link for paragraph retrieval
 
 ## LM Functions
 
